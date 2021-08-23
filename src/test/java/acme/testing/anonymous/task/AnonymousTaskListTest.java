@@ -19,7 +19,7 @@ public class AnonymousTaskListTest extends AcmeWorkPlansTest {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/task/list.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void ListRecent(final int recordIndex, final String description, final String Link, final String finalPeriod, final String initialPeriod, final String title) {
+	public void ListRecent(final int recordIndex, final String title,final String description,final String initialPeriod, final String finalPeriod,final String Link  ) {
 
 		super.clickOnMenu("Anonymous", "List unfinished tasks");
 
@@ -45,7 +45,7 @@ public class AnonymousTaskListTest extends AcmeWorkPlansTest {
 
 		super.signIn(user, password);
 
-		this.driver.get("localhost:8080/Acme-Planner/anonymous/task/list");
+		this.driver.get("localhost:8080/Acme-Work-Plans/anonymous/task/list");
 		super.checkPanicExists();
 
 		super.signOut();
