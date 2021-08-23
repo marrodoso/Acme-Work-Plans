@@ -12,7 +12,7 @@
                 
         <property name="context-root" value="Acme-Work-Plans"/>
                 
-        <property name="java-output-path" value="/D02-Acme-Work-Plans/target/classes"/>
+        <property name="java-output-path" value="/D03-Acme-Work-Plans/target/classes"/>
             
     </wb-module>
     
