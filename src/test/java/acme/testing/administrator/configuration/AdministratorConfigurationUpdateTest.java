@@ -72,6 +72,7 @@ public class AdministratorConfigurationUpdateTest extends AcmeWorkPlansTest{
 		// Comprobamos que hay errores
 		super.checkErrorsExist();
 		
+		
 		//Cerramos sesión
 		super.signOut();
 	}
