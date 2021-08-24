@@ -48,42 +48,42 @@ public class AdministratorShowDashboardTest extends AcmeWorkPlansTest {
 		final By locatorAverageDurationPeriodTasks;
 		locatorAverageDurationPeriodTasks = By.xpath("/html/body/div[2]/div/table/tbody/tr[5]/td");
 		final WebElement averageDurationPeriodTasks = this.driver.findElement(locatorAverageDurationPeriodTasks);
-		Assertions.assertEquals("17,049.00", averageDurationPeriodTasks.getText());
+		Assertions.assertEquals("9,012.00", averageDurationPeriodTasks.getText());
 
 		By locatorDeviationDurationPeriodTasks;
 		locatorDeviationDurationPeriodTasks = By.xpath("/html/body/div[2]/div/table/tbody/tr[6]/td");
 		final WebElement deviationDurationPeriodTasks = this.driver.findElement(locatorDeviationDurationPeriodTasks);
-		Assertions.assertEquals("1,531.06", deviationDurationPeriodTasks.getText());
+		Assertions.assertEquals("598.30", deviationDurationPeriodTasks.getText());
 
 		By locatorMinimumDurationPeriodTasks;
 		locatorMinimumDurationPeriodTasks = By.xpath("/html/body/div[2]/div/table/tbody/tr[7]/td");
 		final WebElement minimumDurationPeriodTasks = this.driver.findElement(locatorMinimumDurationPeriodTasks);
-		Assertions.assertEquals("0.00", minimumDurationPeriodTasks.getText());
+		Assertions.assertEquals("1.00", minimumDurationPeriodTasks.getText());
 
 		By locatorMaximumDurationPeriodTasks;
 		locatorMaximumDurationPeriodTasks = By.xpath("/html/body/div[2]/div/table/tbody/tr[8]/td");
 		final WebElement maximumDurationPeriodTasks = this.driver.findElement(locatorMaximumDurationPeriodTasks);
-		Assertions.assertEquals("3,673.00", maximumDurationPeriodTasks.getText());
+		Assertions.assertEquals("2,208.00", maximumDurationPeriodTasks.getText());
 
 		By locatorAverageWorkloadTasks;
 		locatorAverageWorkloadTasks = By.xpath("/html/body/div[2]/div/table/tbody/tr[9]/td");
 		final WebElement averageWorkloadTasks = this.driver.findElement(locatorAverageWorkloadTasks);
-		Assertions.assertEquals("3.36", averageWorkloadTasks.getText());
+		Assertions.assertEquals("9.53", averageWorkloadTasks.getText());
 
 		By locatorDeviationWorkloadTasks;
 		locatorDeviationWorkloadTasks = By.xpath("/html/body/div[2]/div/table/tbody/tr[10]/td");
 		final WebElement deviationWorkloadTasks = this.driver.findElement(locatorDeviationWorkloadTasks);
-		Assertions.assertEquals("4.09", deviationWorkloadTasks.getText());
+		Assertions.assertEquals("13.58", deviationWorkloadTasks.getText());
 
 		By locatorMinimumWorkloadTasks;
 		locatorMinimumWorkloadTasks = By.xpath("/html/body/div[2]/div/table/tbody/tr[11]/td");
 		final WebElement minimumWorkloadTasks = this.driver.findElement(locatorMinimumWorkloadTasks);
-		Assertions.assertEquals("0.10", minimumWorkloadTasks.getText());
+		Assertions.assertEquals("0.24", minimumWorkloadTasks.getText());
 
 		final By locatorMaximumWorkloadTasks;
 		locatorMaximumWorkloadTasks = By.xpath("/html/body/div[2]/div/table/tbody/tr[12]/td");
 		final WebElement maximumWorkloadTasks = this.driver.findElement(locatorMaximumWorkloadTasks);
-		Assertions.assertEquals("11.25", maximumWorkloadTasks.getText());
+		Assertions.assertEquals("50.34", maximumWorkloadTasks.getText());
 
 	}
 	/*
