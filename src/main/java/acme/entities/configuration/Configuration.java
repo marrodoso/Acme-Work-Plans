@@ -1,10 +1,12 @@
 
 package acme.entities.configuration;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.Range;
 
 import acme.framework.entities.DomainEntity;
@@ -19,6 +21,8 @@ public class Configuration extends DomainEntity {
 	private static final long	serialVersionUID	= 1L;
 	
 	@NotBlank
+	@Length(min=0, max=255)
+	@Column(length = 512)
 	String spamWords;
 	
 	@NotNull
