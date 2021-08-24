@@ -44,11 +44,11 @@ public class ManagerTaskListTest extends AcmeWorkPlansTest {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/task/list-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void listManagerNegative(final String user, final String password) {
+	public void listManagerNegative(final int recordIndex,final String user, final String password) {
 
 		super.signIn(user, password);
 
-		this.driver.get("localhost:8080/Acme-Planner/manager/task/list");
+		this.driver.get("localhost:8080/Acme-Work-Plans/manager/task/list");
 		super.checkPanicExists();
 
 		super.signOut();
