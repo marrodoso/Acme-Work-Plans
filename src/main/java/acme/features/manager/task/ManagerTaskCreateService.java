@@ -170,7 +170,12 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 				errors.state(request,  false, "workloadInHours", "manager.message.form.error.workload3");
 
 			}
+			
+			if(parteEntera>99 || parteEntera < 0) {
+				errors.state(request, false, "workloadInHours", "manager.message.form.error.workloadHours");
+			}
 		}
+		
 
 	}
 

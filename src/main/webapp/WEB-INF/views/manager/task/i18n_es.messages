@@ -29,7 +29,7 @@ manager.message.form.error.workload = La carga de trabajo no puede ser superior 
 manager.message.form.error.workload2 = Los minutos de la carga de trabajo deben estar entre 0 y 59
 manager.message.form.error.workload3 = Introduce fechas válidas
 manager.message.form.error.workload4 = Los minutos de la carga de trabajo no pueden tener mas de 2 digitos
-
+manager.message.form.error.workloadHours= La parte entera de workload debe estar entre 0 y 99
 
 manager.task.list.label.initial = Inicio
 manager.task.list.label.end = Fin

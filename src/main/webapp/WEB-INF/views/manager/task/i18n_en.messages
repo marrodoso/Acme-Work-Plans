@@ -29,6 +29,7 @@ manager.message.form.error.workload = Workload cannot be higher than dates diffe
 manager.message.form.error.workload2 = Workload minutes must be between 0 and 59
 manager.message.form.error.workload3 = Enter valid dates
 manager.message.form.error.workload4 = Workload has more than 2 decimal digits
+manager.message.form.error.workloadHours= The whole number part of workload must be between 0 and 99
 
  
 
