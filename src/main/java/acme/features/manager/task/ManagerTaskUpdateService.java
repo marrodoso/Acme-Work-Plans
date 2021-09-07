@@ -44,9 +44,9 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		assert request != null;
 		final Task tarea = this.findOne(request);
 		final Integer id = tarea.getManager().getId();
-		if(request.getPrincipal().getActiveRoleId() != id) {
+		if (request.getPrincipal().getActiveRoleId() != id) {
 			return false;
-		}else {
+		} else {
 			return true;
 		}
 	}
@@ -89,13 +89,12 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		final List<Configuration> lsp = new ArrayList<>();
 		lsp.addAll(sp);
 
-
 		for (int i = 0; i < lsp.size(); i++) {
 			errors.state(request, !lsp.get(i).isSpam(entity.getTitle()), "title", "manager.message.form.error.spam");
 			errors.state(request, !lsp.get(i).isSpam(entity.getDescription()), "description", "manager.message.form.error.spam");
 		}
-		
-		if(entity.getPeriodInitial()==null || entity.getPeriodFinal()==null) {
+
+		if (entity.getPeriodInitial() == null || entity.getPeriodFinal() == null) {
 			errors.state(request, false, "periodInitial", "manager.message.form.error.date4");
 		}
 
@@ -115,26 +114,29 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		if (entity.getPeriodFinal() != null && entity.getPeriodFinal().before(date)) {
 			errors.state(request, false, "periodFinal", "manager.message.form.error.date3");
 		}
-		if (entity.getPeriodFinal()!=null && entity.getPeriodInitial()!=null && entity.getWorkloadInHours() != null) {
+		if (entity.getWorkloadInHours() != null) {
 			final double number = entity.getWorkloadInHours();
 			final String str = String.format("%.2f", number);
 			final String fullNumber = String.valueOf(number);
 			final int parteEntera = Integer.parseInt(str.substring(0, str.indexOf(".")));
 			final int parteDecimal = Integer.parseInt(str.substring(str.indexOf('.') + 1));
-			final int workloadInMinutes = (parteEntera*60) + parteDecimal;
+			final int workloadInMinutes = (parteEntera * 60) + parteDecimal;
 			final String parteDecimalCompleta = fullNumber.substring(fullNumber.indexOf('.') + 1);
 			final int tamaño = parteDecimalCompleta.length();
-			
-			if(tamaño>2) {
+
+			if (tamaño > 2) {
 				errors.state(request, false, "workloadInHours", "manager.message.form.error.workload2");
-			}else if(parteDecimal<0 || parteDecimal>=60) {
+			} else if (parteDecimal < 0 || parteDecimal >= 60) {
 				errors.state(request, false, "workloadInHours", "manager.message.form.error.workload2");
 			} else if (entity.getPeriodInitial() != null && entity.getPeriodFinal() != null && workloadInMinutes > (entity.durationPeriodInMinutes())) {
 				errors.state(request, false, "workloadInHours", "manager.message.form.error.workload");
-			} else if(entity.getPeriodInitial()==null || entity.getPeriodFinal() == null || entity.getPeriodInitial().after(entity.getPeriodFinal()) || entity.getPeriodFinal().before(entity.getPeriodInitial()) ||
-				entity.getPeriodInitial().before(date) || entity.getPeriodFinal().before(date)) {
-				errors.state(request,  false, "workloadInHours", "manager.message.form.error.workload3");
+			} else if (entity.getPeriodInitial() == null || entity.getPeriodFinal() == null || entity.getPeriodInitial().after(entity.getPeriodFinal()) || entity.getPeriodFinal().before(entity.getPeriodInitial()) || entity.getPeriodInitial().before(date)
+				|| entity.getPeriodFinal().before(date)) {
+				errors.state(request, false, "workloadInHours", "manager.message.form.error.workload3");
 
+			}
+			if (parteEntera > 99 || parteEntera < 0) {
+				errors.state(request, false, "workloadInHours", "manager.message.form.error.workloadHours");
 			}
 		}
 
