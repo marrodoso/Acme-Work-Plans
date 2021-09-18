@@ -16,7 +16,7 @@ public class ManagerTaskCreateTest extends AcmeWorkPlansTest {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/task/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	@Order(20)
+	@Order(10)
 	public void createPositive(final int recordIndex, final String title, final String description, final String periodInitial, final String periodFinal, final String workloadInHours, final String Link, final Boolean isPublic) {
 
 		// Accedemos como manager
